@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/anthanh/cucumber-testcafe-example#readme",
   "dependencies": {
-    "cucumber": "^5.1.0"
+    "base64-img": "^1.0.4",
+    "cucumber": "^5.1.0",
+    "testcafe": "^1.2.1"
   }
 }
