@@ -6,7 +6,7 @@ class Home {
   }
 
   selectSearchInput() {
-    return select('input[title="Search"]');
+    return select('input[type="text"]');
   }
 
   selectContent() {
@@ -28,7 +28,17 @@ class Home {
   }
 
   async setContentType(type) {
-    await testController.click(select('div[role="tab"]').withText(type));
+    let index;
+    switch (type) {
+      case "Images":
+        index = 2;
+        break;
+      // TODO: other tabs
+      default:
+        index = 1;
+        break;
+    }
+    await testController.click(select(`div[role="tab"]:nth-child(${index}) a`));
   }
 
   async contentIsPresent() {
