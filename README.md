@@ -13,3 +13,4 @@ npm install
 npm test
 ```
 
+This command will generate several reports at `report.json` and `report.html`

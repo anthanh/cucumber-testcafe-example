@@ -4,7 +4,9 @@
   "description": "An example bdd project with cucumber, gherkin and testcafe",
   "main": "index.js",
   "scripts": {
-    "test": "npx cucumber-js"
+    "test": "npm run test-init && npx cucumber-js --format=json:reports/report.json && npm run test-report",
+    "test-init": "mkdir -p reports && touch reports/report.json",
+    "test-report": "node cucumber-html.report.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
   "dependencies": {
     "base64-img": "^1.0.4",
     "cucumber": "^5.1.0",
+    "cucumber-html-reporter": "^5.0.0",
     "testcafe": "^1.2.1"
   }
 }
