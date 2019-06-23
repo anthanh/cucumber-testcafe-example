@@ -1,0 +1,4 @@
+{
+  "default": "--tags \"not @ignore\"",
+  "ci": "--tags 'not @ignore' --format=json:reports/report.json --world-parameters '{\"browser\": \"chrome:headless\"}'"
+}

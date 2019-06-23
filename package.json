@@ -4,7 +4,8 @@
   "description": "An example bdd project with cucumber, gherkin and testcafe",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test-init && npx cucumber-js --format=json:reports/report.json && npm run test-report",
+    "test": "npx cucumber-js",
+    "test:ci": "npm run test-init && PROFILE=ci npx cucumber-js && npm run test-report",
     "test-init": "mkdir -p reports && touch reports/report.json",
     "test-report": "node cucumber-html.report.js"
   },
