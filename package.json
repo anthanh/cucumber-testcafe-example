@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/anthanh/cucumber-testcafe-example/issues"
   },
-  "homepage": "https://github.com/anthanh/cucumber-testcafe-example#readme"
+  "homepage": "https://github.com/anthanh/cucumber-testcafe-example#readme",
+  "dependencies": {
+    "cucumber": "^5.1.0"
+  }
 }
