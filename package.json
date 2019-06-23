@@ -1,0 +1,26 @@
+{
+  "name": "cucumber-testcafe-example",
+  "version": "1.0.0",
+  "description": "An example bdd project with cucumber, gherkin and testcafe",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anthanh/cucumber-testcafe-example.git"
+  },
+  "keywords": [
+    "cucumber",
+    "bdd",
+    "gherkin",
+    "testcafe",
+    "testing"
+  ],
+  "author": "anthanh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anthanh/cucumber-testcafe-example/issues"
+  },
+  "homepage": "https://github.com/anthanh/cucumber-testcafe-example#readme"
+}
