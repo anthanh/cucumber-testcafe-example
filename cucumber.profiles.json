@@ -1,4 +1,4 @@
 {
-  "default": "--tags \"not @ignore\"",
-  "ci": "--tags 'not @ignore' --format=json:reports/report.json --world-parameters '{\"browser\": \"chrome:headless\"}'"
+  "default": "--tags 'not @ignore' --require-module @babel/register",
+  "ci": "--tags 'not @ignore'  --require-module @babel/register --format=json:reports/report.json --world-parameters '{\"browser\": \"chrome:headless\"}'"
 }

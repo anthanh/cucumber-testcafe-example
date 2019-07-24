@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies  */
-const { When, Given, Then } = require("cucumber");
-const { book } = require("../pages/book");
+import { When, Given, Then } from "cucumber";
+import { book } from "../pages/book";
 
 Given("a google homepage", async () => {
   await book.home.navigate();

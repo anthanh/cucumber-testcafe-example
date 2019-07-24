@@ -1,6 +1,7 @@
-const { select } = require("../support/utils");
+import { testController } from "../support/world";
+import { select } from "../support/utils";
 
-class Home {
+export class Home {
   constructor() {
     this.url = "https://google.com";
   }
@@ -49,5 +50,3 @@ class Home {
     await testController.expect(this.selectImages()).ok();
   }
 }
-
-exports.Home = Home;

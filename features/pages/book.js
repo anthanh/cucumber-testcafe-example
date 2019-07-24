@@ -1,5 +1,5 @@
-const { Home } = require("./home.page");
+import { Home } from "./home.page";
 
-exports.book = {
+export const book = {
   home: new Home()
 };

@@ -1,16 +1,10 @@
-/* eslint-disable import/no-extraneous-dependencies  */
+import { testController } from "./world";
 
-const fs = require("fs");
-const createTestCafe = require("testcafe");
-const {
-  AfterAll,
-  setDefaultTimeout,
-  Before,
-  After,
-  Status
-} = require("cucumber");
-const testControllerHolder = require("../support/testControllerHolder");
-const errorHandling = require("../support/errorHandling");
+import fs from "fs";
+import createTestCafe from "testcafe";
+import { AfterAll, setDefaultTimeout, Before, After, Status } from "cucumber";
+import testControllerHolder from "../support/testControllerHolder";
+import * as errorHandling from "../support/errorHandling";
 
 const TIMEOUT = 2000000;
 
@@ -22,7 +16,7 @@ let n = 0;
 function createTestFile() {
   fs.writeFileSync(
     "test.js",
-    'import errorHandling from "./features/support/errorHandling.js";\n' +
+    'import * as errorHandling from "./features/support/errorHandling.js";\n' +
       'import testControllerHolder from "./features/support/testControllerHolder.js";\n\n' +
       'fixture("fixture")\n' +
       "test\n" +
@@ -116,9 +110,9 @@ After(handleErrors);
 
 AfterAll(afterAll);
 
-exports.getIsTestCafeError = () => {
+export const getIsTestCafeError = () => {
   return isTestCafeError;
 };
-exports.getAttachScreenshotToReport = () => {
+export const getAttachScreenshotToReport = () => {
   return attachScreenshotToReport;
 };

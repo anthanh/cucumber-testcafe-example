@@ -34,4 +34,4 @@ const testControllerHolder = {
   }
 };
 
-module.exports = testControllerHolder;
+export default testControllerHolder;

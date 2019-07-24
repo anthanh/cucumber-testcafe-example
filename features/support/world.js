@@ -1,7 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const { setWorldConstructor } = require("cucumber");
-const base64Img = require("base64-img");
-const testControllerHolder = require("./testControllerHolder");
+import { setWorldConstructor } from "cucumber";
+import base64Img from "base64-img";
+import testControllerHolder from "./testControllerHolder";
+
+let testController = null;
 
 function CustomWorld({ attach, parameters }) {
   this.waitForTestController = testControllerHolder.get().then(async tc => {
@@ -52,3 +54,5 @@ function CustomWorld({ attach, parameters }) {
 }
 
 setWorldConstructor(CustomWorld);
+
+export { testController };

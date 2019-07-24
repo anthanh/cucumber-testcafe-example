@@ -1,8 +1,9 @@
-/* eslint-disable no-undef, import/no-extraneous-dependencies */
-const testcafe = require("testcafe");
-const hooks = require("../support/hooks");
+import { testController } from "./world";
 
-exports.addErrorToController = () =>
+import testcafe from "testcafe";
+import * as hooks from "../support/hooks";
+
+export const addErrorToController = () =>
   testController.executionChain.catch(result => {
     const errAdapter = new testcafe.embeddingUtils.TestRunErrorFormattableAdapter(
       result,
@@ -15,7 +16,7 @@ exports.addErrorToController = () =>
     return testController.testRun.errs.push(errAdapter);
   });
 
-exports.ifErrorTakeScreenshot = resolvedTestController => {
+export const ifErrorTakeScreenshot = resolvedTestController => {
   if (
     hooks.getIsTestCafeError() === true &&
     testController.testRun.opts.takeScreenshotsOnFails === true
