@@ -3,35 +3,35 @@ const testControllerHolder = {
   captureResolver: null,
   getResolver: null,
 
-  capture(t) {
-    testControllerHolder.testController = t;
+  capture (t) {
+    testControllerHolder.testController = t
 
     if (testControllerHolder.getResolver) {
-      testControllerHolder.getResolver(t);
+      testControllerHolder.getResolver(t)
     }
 
     return new Promise(resolve => {
-      testControllerHolder.captureResolver = resolve;
-    });
+      testControllerHolder.captureResolver = resolve
+    })
   },
 
-  free() {
-    testControllerHolder.testController = null;
+  free () {
+    testControllerHolder.testController = null
 
     if (testControllerHolder.captureResolver) {
-      testControllerHolder.captureResolver();
+      testControllerHolder.captureResolver()
     }
   },
 
-  get() {
+  get () {
     return new Promise(resolve => {
       if (testControllerHolder.testController) {
-        resolve(testControllerHolder.testController);
+        resolve(testControllerHolder.testController)
       } else {
-        testControllerHolder.getResolver = resolve;
+        testControllerHolder.getResolver = resolve
       }
-    });
+    })
   }
-};
+}
 
-export default testControllerHolder;
+export default testControllerHolder

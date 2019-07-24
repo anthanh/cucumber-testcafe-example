@@ -1,52 +1,52 @@
-import { testController } from "../support/world";
-import { select } from "../support/utils";
+import { testController } from '../support/world'
+import { select } from '../support/utils'
 
 export class Home {
-  constructor() {
-    this.url = "https://google.com";
+  constructor () {
+    this.url = 'https://google.com'
   }
 
-  selectSearchInput() {
-    return select('input[type="text"]');
+  selectSearchInput () {
+    return select('input[type="text"]')
   }
 
-  selectContent() {
-    return select("a h3");
+  selectContent () {
+    return select('a h3')
   }
 
-  selectImages() {
-    return select("a > .rg_i");
+  selectImages () {
+    return select('a > .rg_i')
   }
 
-  async navigate() {
-    await testController.navigateTo(this.url);
+  async navigate () {
+    await testController.navigateTo(this.url)
   }
 
-  async search(text) {
+  async search (text) {
     await testController
       .typeText(this.selectSearchInput(), text, { paste: true })
-      .pressKey("enter");
+      .pressKey('enter')
   }
 
-  async setContentType(type) {
-    let index;
+  async setContentType (type) {
+    let index
     switch (type) {
-      case "Images":
-        index = 2;
-        break;
+      case 'Images':
+        index = 2
+        break
       // TODO: other tabs
       default:
-        index = 1;
-        break;
+        index = 1
+        break
     }
-    await testController.click(select(`div[role="tab"]:nth-child(${index}) a`));
+    await testController.click(select(`div[role="tab"]:nth-child(${index}) a`))
   }
 
-  async contentIsPresent() {
-    await testController.expect(this.selectContent()).ok();
+  async contentIsPresent () {
+    await testController.expect(this.selectContent()).ok()
   }
 
-  async imagesIsPresent() {
-    await testController.expect(this.selectImages()).ok();
+  async imagesIsPresent () {
+    await testController.expect(this.selectImages()).ok()
   }
 }

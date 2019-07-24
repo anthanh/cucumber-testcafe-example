@@ -1,7 +1,7 @@
-import { testController } from "./world";
+import { testController } from './world'
 
-import testcafe from "testcafe";
-import * as hooks from "../support/hooks";
+import testcafe from 'testcafe'
+import * as hooks from '../support/hooks'
 
 export const addErrorToController = () =>
   testController.executionChain.catch(result => {
@@ -12,9 +12,9 @@ export const addErrorToController = () =>
         userAgent:
           testController.testRun.browserConnection.browserInfo.userAgent
       }
-    );
-    return testController.testRun.errs.push(errAdapter);
-  });
+    )
+    return testController.testRun.errs.push(errAdapter)
+  })
 
 export const ifErrorTakeScreenshot = resolvedTestController => {
   if (
@@ -22,15 +22,15 @@ export const ifErrorTakeScreenshot = resolvedTestController => {
     testController.testRun.opts.takeScreenshotsOnFails === true
   ) {
     if (
-      process.argv.includes("--format") ||
-      process.argv.includes("-f") ||
-      process.argv.includes("--format-options")
+      process.argv.includes('--format') ||
+      process.argv.includes('-f') ||
+      process.argv.includes('--format-options')
     ) {
       return resolvedTestController
         .takeScreenshot()
-        .then(() => hooks.getAttachScreenshotToReport());
+        .then(() => hooks.getAttachScreenshotToReport())
     }
-    return resolvedTestController.takeScreenshot();
+    return resolvedTestController.takeScreenshot()
   }
-  return false;
-};
+  return false
+}

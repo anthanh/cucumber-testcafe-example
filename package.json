@@ -4,6 +4,7 @@
   "description": "An example bdd project with cucumber, gherkin and testcafe",
   "main": "index.js",
   "scripts": {
+    "lint": "standard",
     "test": "npx cucumber-js",
     "test:ci": "npm run test-init && PROFILE=ci npx cucumber-js && npm run test-report",
     "test-init": "mkdir -p reports && touch reports/report.json",
@@ -38,6 +39,7 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/register": "^7.5.5",
     "@babel/runtime": "^7.5.5",
-    "babel-plugin-root-import": "^6.4.1"
+    "babel-plugin-root-import": "^6.4.1",
+    "standard": "^13.1.0"
   }
 }
